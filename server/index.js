@@ -86,7 +86,7 @@ if (titulo && paginas && descripcion && autor){
 app.put ('/libros/:id', (req, res) => {  
     Libro.findOneAndUpdate({_id: req.params.id}, req.body)
     .then (function (){
-        Libros.findOne({_id: req.params.id})
+        Libro.findOne({_id: req.params.id})
         .then (function(libros){
             res.send(libros);
 
